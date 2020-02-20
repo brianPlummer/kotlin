@@ -261,6 +261,8 @@ private class ModuleProductionSourceScope(module: Module) : ModuleSourceScope(mo
     // KT-6206
     override fun hashCode(): Int = 31 * module.hashCode()
 
+    override fun calcHashCode(): Int = 31 * module.hashCode()
+
     override fun contains(file: VirtualFile) =
         moduleFileIndex.isInSourceContentWithoutInjected(file) && !moduleFileIndex.isInTestSourceContentKotlinAware(file)
 
